@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<meta http-equiv='X-UA-Compatible' content='ie-edge'>
+<title>calculator</title>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Great+Vibes'>
+<link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+<br />
+<div class='calc' id='calc'>
+
+<div class='calc-row'>
+	<div class='calc-display' id='display'>0</div>
+</div>
+<div class='calc-row'>
+	<div class='calc-button medium'>C</div>
+	<div class='calc-button narrow'>←</div>
+	<div class='calc-button narrow op'>÷</div>
+</div>
+<div class='calc-row'>
+	<div class='calc-button narrow'>7</div>
+	<div class='calc-button narrow'>8</div>
+	<div class='calc-button narrow'>9</div>
+	<div class='calc-button narrow op'>X</div>
+</div>
+<div class='calc-row'>
+	<div class='calc-button narrow'>4</div>
+	<div class='calc-button narrow'>5</div>
+	<div class='calc-button narrow'>6</div>
+	<div class='calc-button narrow op'>-</div>
+</div>
+<div class='calc-row'>
+	<div class='calc-button narrow'>1</div>
+	<div class='calc-button narrow'>2</div>
+	<div class='calc-button narrow'>3</div>
+	<div class='calc-button narrow op'>+</div>
+</div>
+<div class='calc-row'>
+	<div class='calc-button wide'>0</div>
+	<div class='calc-button narrow op'>=</div>
+</div>
+
+
+</div>
+<script src='calc.js'></script>
+<script>
+var calc = new Calculator();
+var display = document.getElementById('display');
+
+document.getElementById('calc').addEventListener
+(
+	'click',
+	function(e)
+	{
+	        if(e.target.classList.contains('calc-button'))
+        	{
+                	calc.getKey(e.target.innerHTML);
+			display.innerHTML = calc.readDisplay();
+			e.stopPropagation();
+        	}
+	}
+);
+
+
+
+
+display.innerHTML = calc.readDisplay();
+
+
+
+
+</script>
+</body>
+</html>

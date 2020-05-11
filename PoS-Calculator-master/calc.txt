@@ -1,0 +1,21 @@
+1
+1
+3
+Calculator {
+  state: Symbol(number2),
+  displayed: 3,
+  num1: 1,
+  num2: 0,
+  operator: '+'
+}
+4
+Calculator {
+  state: Symbol(number2_start),
+  displayed: 4,
+  num1: 4,
+  num2: 3,
+  operator: 'X'
+}
+5
+20
+string

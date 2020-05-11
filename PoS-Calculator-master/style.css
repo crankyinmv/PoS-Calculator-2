@@ -1,0 +1,99 @@
+* {box-sizing: border-box;}
+.calc 
+{
+	font-family: monospace;
+	display: flex;
+	flex-wrap: none;
+	background-color: #333333;
+	flex-direction: column;
+/*
+	align-items: stretch;
+*/
+	width: 400px;
+	font-size: 40px;
+}
+.calc-row
+{
+	display: flex;
+	flex-wrap: none;
+	height: 100px;
+}
+.calc-display
+{
+	background-color: black;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	color: white;
+	width: 100%;
+	padding: 10px;
+}
+
+.calc-button
+{
+	background-color: #aaaaaa;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	border: 1px solid #333333;
+}
+
+.calc-button:hover
+{
+	cursor: pointer;
+	background-color: #dddddd;
+}
+
+.calc-button.op:hover
+{
+	background-color:palegoldenrod;
+}
+
+.calc-row :first-child.calc-button
+{
+	border-left-width: 0px;
+}
+
+/* The last child of a calc-row which also needs to be a calc-button. */
+.calc-row :last-child.calc-button
+{
+	border-right-width: 0px;
+}
+
+/* Any calc-button child of a calc-row which is the last child. */
+.calc-row:last-child .calc-button
+{
+	border-bottom-width: 0px;
+}
+.calc-button.op
+{
+	background-color: goldenrod;
+}
+/*
+.narrow
+{
+	flex: 1;
+}
+.medium
+{
+	flex: 2;
+}
+.wide
+{
+	flex: 3;
+}
+*/
+
+.narrow
+{
+	width: 25%;
+}
+.medium
+{
+	width: 50%;
+}
+.wide
+{
+	width: 75%;
+}
+
