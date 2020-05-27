@@ -22,7 +22,7 @@
 		flex:1;
 	}
 }
-.calc-row
+.calc .row
 {
 	display: flex;
 	flex-wrap: none;

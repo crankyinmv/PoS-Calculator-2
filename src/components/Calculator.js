@@ -16,8 +16,8 @@ const Calculator = () =>
 		<CalcDisplay />
 		<div className='row justify-content-around'>
 			<CalcButton bwidth='medium' bval='C' />
-			<CalcButton bwidth='narrow' bval='←' />
-			<CalcButton bwidth='narrow' btype='op' bval='÷' />
+			<CalcButton bwidth='other' bval='←' />
+			<CalcButton bwidth='other' btype='op' bval='÷' />
 		</div>
 		<div className='row justify-content-around'>
 			<CalcButton bwidth='narrow' bval='7' />
@@ -39,7 +39,7 @@ const Calculator = () =>
 		</div>
 		<div className='row justify-content-around'>
 			<CalcButton bwidth='wide' bval='0' />
-			<CalcButton bwidth='narrow' btype='op' bval='=' />
+			<CalcButton bwidth='other' btype='op' bval='=' />
 		</div>
 	</div>
 	);
