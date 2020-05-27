@@ -1,5 +1,0 @@
-calculator
-- calcDisplay
-( calcRow included in calculator jsx, but not a component )
-- calcButton
-
