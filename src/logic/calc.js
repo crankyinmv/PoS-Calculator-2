@@ -38,6 +38,8 @@ const doKey = function(key, oldState)
 {
 	var state = oldState ? {...oldState} : getDefaultState();
 
+
+	if(key === '/') key = '÷';	// Because we expect the dumb-assed short division sign.
 	if(key === 'C')
 	{
 		state = clear(state);

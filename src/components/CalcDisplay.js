@@ -12,14 +12,6 @@ const CalcDisplay = () =>
 		<div className="col display text-right">{realDisplayed}</div>
 	</div>
 	);
-
-
-
-	return (
-	<div className='calc-row'>
-		<div className='calc-display' id='display'>{realDisplayed}</div>
-	</div>
-	);
 };
 
 export default CalcDisplay;
