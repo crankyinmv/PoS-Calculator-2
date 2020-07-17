@@ -4,20 +4,9 @@ const NUMBER2START = Symbol('number2_start');
 const NUMBER1 = Symbol('number1');
 const NUMBER2 = Symbol('number2');
 
-/*
-function Calculator()
-{
-	state.calcState = NUMBER1START;
-	state.displayed = 0;
-	state.num1 = 0;
-	state.num2 = 0;
-	state.operator = '';
-}
-*/
-
 const getDefaultState = function()
 {
-	return {
+	var state = {
 		calcState:NUMBER1START,
 		displayed:0,
 		num1:0,
@@ -25,21 +14,17 @@ const getDefaultState = function()
 		operator:'',
 		overflow: false
 	};
-}
 
-/*
-Object.defineProperty(Calculator, 'number1Start', {value: Symbol('number1_start')});
-Object.defineProperty(Calculator, 'number2Start', {value: Symbol('number2_start')});
-Object.defineProperty(Calculator, 'number1', {value: Symbol('number1')});
-Object.defineProperty(Calculator, 'number2', {value: Symbol('number2')});
-*/
+	return state;
+};
 
 const doKey = function(key, oldState)
 {
-	var state = oldState ? {...oldState} : getDefaultState();
+	var state = oldState || getDefaultState();
 
 
-	if(key === '/') key = '÷';	// Because we expect the dumb-assed short division sign.
+	if(key === '/') 
+		key = '÷';	// Because we expect the dumb-assed short division sign.
 	if(key === 'C')
 	{
 		state = clear(state);
@@ -116,10 +101,6 @@ const calculate = function(state)
 	{
 		state.overflow = true;
 	}
-	else if(state.calcState !== NUMBER2)
-	{
-		throw new Error("calculation from state: "+state.calcState);
-	}
 	else
 	{
 		if(state.operator === '+')
@@ -176,4 +157,4 @@ const readDisplay = function(state)
 		return ''+state.displayed;
 }
 
-export {doKey, readDisplay, getDefaultState};
+module.exports = {NUMBER1START, doKey, readDisplay, getDefaultState};
