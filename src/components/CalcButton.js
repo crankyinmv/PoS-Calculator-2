@@ -5,11 +5,12 @@ import '../style.css';
 const CalcButton = (props) =>
 {
 	const calcContext = useContext(CalcContext);
-	var {calculate} = calcContext;
+console.log('button',calcContext);
+	var {calculate, sr} = calcContext;
 
 	const {bwidth,bval,btype = 'digit'} = props;
 
-	const onClick= () => {calculate(bval);};
+	const onClick= () => {calculate(bval);sr();};
 	const buttonStyles = 
 	{
 		'narrow': 'col-6 col-sm',

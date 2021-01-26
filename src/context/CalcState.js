@@ -22,13 +22,18 @@ return x;
 
 const CalcState = props =>
 {
+console.log('calcState',props);
 	const initialState = getDefaultState();
 	const [state, dispatch] = useReducer(CalcReducer, initialState);
 
 	const calculate = (bval) => { dispatch({type:CALCULATE, payload:bval});};
 
+//	let {sr,refresh} = {props};
+	let sr = props.sr, refresh = props.refresh, usr = props.usr;
+
+console.log(sr,usr,refresh);
 	return (
-		<CalcContext.Provider value={{state,calculate}}>
+		<CalcContext.Provider value={{state,calculate,sr,usr,refresh}}>
 			{props.children}
 		</CalcContext.Provider>
 

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 //import CalcContext from '../context/calcContext';
 import CalcDisplay from './CalcDisplay';
 import CalcButton from './CalcButton';
+import CalcState from '../context/CalcState';
+//import {getDefaultState} from '../logic/calc';
 
 const Calculator = () =>
 {
